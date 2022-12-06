@@ -1,0 +1,12 @@
+.star-rating {
+  display: flex;
+  gap: 0.2em;
+}
+
+.star {
+  border: 1px solid #666;
+  padding-inline: 0.1em;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=star-rating.css.map */

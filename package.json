@@ -1,0 +1,11 @@
+{
+  "name": "vanilla-components",
+  "version": "1.0.0",
+  "description": "Vanilla JavaScript Components",
+  "keywords": [],
+  "author": "@aderchox",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.56.1"
+  }
+}
