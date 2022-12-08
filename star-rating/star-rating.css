@@ -10,6 +10,11 @@
   stroke: black;
   stroke-width: 10px;
   fill: transparent;
+  transition: scale 0.25s ease-out;
+}
+
+.star-rating:not([rating-readonly]) .star:hover {
+  scale: 1.2;
 }
 
 .star.filled {
