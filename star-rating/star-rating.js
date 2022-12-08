@@ -1,3 +1,6 @@
+const svgns = "http://www.w3.org/2000/svg";
+const xlinkns = "http://www.w3.org/1999/xlink";
+
 function constructStarRating(element) {
   const stars = makeStars();
   let _roundedRating;
@@ -53,10 +56,13 @@ function constructStarRating(element) {
 
   function makeStars() {
     const stars = [];
-    const star = document.createElement("div");
-    star.classList.add("star");
+    const starSvg = document.createElementNS(svgns, "svg");
+    const starSvgUse = document.createElementNS(svgns, "use");
+    starSvgUse.setAttributeNS(xlinkns, "xlink:href", "icons.svg#star");
+    starSvg.classList.add("star");
+    starSvg.append(starSvgUse);
     for (let i = 0; i < 5; i++) {
-      const starChild = star.cloneNode();
+      const starChild = starSvg.cloneNode(true);
       element.append(starChild);
       stars.push(starChild);
     }
@@ -89,9 +95,9 @@ function constructStarRating(element) {
     const ratingUpperStarNumber = topFilledStarNumber || _roundedRating;
     for (const [index, star] of stars.entries()) {
       if (index < ratingUpperStarNumber) {
-        star.innerHTML = "x";
+        star.classList.add("filled");
       } else {
-        star.innerHTML = "o";
+        star.classList.remove("filled");
       }
     }
   }

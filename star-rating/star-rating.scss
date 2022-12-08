@@ -1,10 +1,17 @@
 .star-rating {
     display: flex;
-    gap: 0.2em;
 }
 
 .star {
-    border: 1px solid #666;
     padding-inline: 0.1em;
     cursor: pointer;
+    width: 24px;
+    height: 24px;
+    stroke: black;
+    stroke-width: 10px;
+    fill: transparent;
+}
+
+.star.filled {
+    fill: pink;
 }

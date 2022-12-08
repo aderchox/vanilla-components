@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "star-rating"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "star-rating"
+	}
+}

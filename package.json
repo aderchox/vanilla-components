@@ -5,7 +5,11 @@
   "keywords": [],
   "author": "@aderchox",
   "license": "ISC",
+  "scripts": {
+    "update-sprite": "svg-sprite -s --symbol-dest icons --symbol-sprite icons.svg icons/individual-icons/*.svg"
+  },
   "devDependencies": {
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "svg-sprite": "^2.0.2"
   }
 }
