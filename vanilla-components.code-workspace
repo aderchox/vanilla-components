@@ -1,13 +1,19 @@
 {
 	"folders": [
 		{
+			"name": "modal",
+			"path": "modal"
+		},
+		{
+			"name": "star-rating",
 			"path": "star-rating"
 		},
 		{
+			"name": "vanilla components",
 			"path": "."
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "star-rating"
+		"liveServer.settings.multiRootWorkspaceName": "modal"
 	}
 }

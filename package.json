@@ -6,6 +6,7 @@
   "author": "@aderchox",
   "license": "ISC",
   "scripts": {
+    "dev": "npx sass -w .:.",
     "update-sprite": "svg-sprite -s --symbol-dest icons --symbol-sprite icons.svg icons/individual-icons/*.svg"
   },
   "devDependencies": {
