@@ -6,39 +6,48 @@
 </head>
 
 <body>
-    <div class="editor">
-        <div class="mediaModalGrid">
-            <div class="mediaCard">
-                <!-- <img src="./Monongahela-National-Forest-West-Virginia.png"> -->
-                <h3>Monongahela National Forest</h3>
+    <div class="editor" data-noteid="id 1">
+        <h3>{ Editor }</h3>
+        <div class="mediaModalContainer">
+            <div class="mediaModalGrid">
+                <div class="mediaCard">
+                    <!-- <img src="./Monongahela-National-Forest-West-Virginia.png"> -->
+                    <h3>Monongahela National Forest</h3>
+                </div>
             </div>
+            <button class="modalOpener">Open Modal</button>
         </div>
-        <button class="modalOpener">Open Modal</button>
     </div>
 
     <div class="notes">
-        <div class="note">
-            <div class="mediaModalGrid">
-                <div class="mediaCard">
-                    <!-- <img src="./Riano-Spain.png"> -->
-                    <h3>Riano Spain</h3>
+        <div class="note" data-noteid="id 2">
+            <h3>{ Note 1 }</h3>
+            <div class="mediaModalContainer">
+                <div class="mediaModalGrid">
+                    <div class="mediaCard">
+                        <!-- <img src="./Riano-Spain.png"> -->
+                        <h3>Riano Spain</h3>
+                    </div>
                 </div>
+                <button class="modalOpener">Open Modal</button>
             </div>
-            <button class="modalOpener">Open Modal</button>
         </div>
-        <div class="note">
-            <div class="mediaModalGrid">
-                <div class="mediaCard">
-                    <!-- <img src="./Granite-Island-Australia.png"> -->
-                    <h3>Granite Island Australia</h3>
+        <div class="note" data-noteid="id 3">
+            <h3>{ Note 2 }</h3>
+            <div class="mediaModalContainer">
+                <div class="mediaModalGrid">
+                    <div class="mediaCard">
+                        <!-- <img src="./Granite-Island-Australia.png"> -->
+                        <h3>Granite Island Australia</h3>
+                    </div>
                 </div>
+                <button class="modalOpener">Open Modal</button>
             </div>
-            <button class="modalOpener">Open Modal</button>
         </div>
     </div>
 
     <div class="mediaModalWrapper hidden">
-        <div class="mediaModal"></div>
+        <div class="mediaModalOutput"></div>
     </div>
 
     <script src="script.js" type="module"></script>

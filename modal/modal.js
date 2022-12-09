@@ -1,22 +1,28 @@
 // Assumed Class Names
 const modalOpenerClass = "modalOpener";
+const mediaModalWrapper = document.querySelector(".mediaModalWrapper");
 
-function constructModals() {
-  const mediaModalWrapper = document.querySelector(".mediaModalWrapper");
-  const mediaModalElement = document.querySelector(".mediaModal");
-
+function constructModal(container, infoFinder) {
   (function main() {
-    initEventListeners();
+    initEventListeners(container);
   })();
 
-  function initEventListeners() {
-    document.addEventListener("click", function clickHandler(clickEvent) {
-      if (clickEvent.target.classList.contains(modalOpenerClass)) {
-        mediaModalWrapper.classList.remove("hidden");
-        mediaModalElement.classList.remove("hidden");
-      }
+  function initEventListeners(container) {
+    const openerButton = container.querySelector(`.${modalOpenerClass}`);
+    openerButton.addEventListener("click", function clickHandler(clickEvent) {
+      mediaModalWrapper.classList.remove("hidden");
     });
+    mediaModalWrapper.addEventListener(
+      "click",
+      function clickHandler(clickEvent) {
+        const clickedOutOfModal =
+          !clickEvent.target.closest(".mediaModalOutput");
+        if (clickedOutOfModal) {
+          mediaModalWrapper.classList.add("hidden");
+        }
+      }
+    );
   }
 }
 
-export default constructModals;
+export default constructModal;
