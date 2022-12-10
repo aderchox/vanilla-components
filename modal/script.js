@@ -1,17 +1,15 @@
 import constructModal from "./modal.js";
 
-const editorModalContainer = document.querySelector(
-  ".editor .mediaModalContainer"
-);
-constructModal(/*modalContainer*/ editorModalContainer, function infoFinder() {
-  return editorModalContainer.parentNode.dataset.noteid;
-});
+const mediaModalContainers = document.querySelectorAll(".modalContainer");
 
-const notesMediaModalContainers = document.querySelectorAll(
-  ".note .mediaModalContainer"
-);
-for (const mediaModalContainer of notesMediaModalContainers) {
-  constructModal(/*container*/ mediaModalContainer, function infoFinder() {
-    return mediaModalContainer.parentNode.dataset.noteid;
-  });
+for (const mediaModalContainer of mediaModalContainers) {
+  constructModal(
+    mediaModalContainer,
+    function onOpen(modal, container) {
+      modal.dataset.noteid = container.parentNode.dataset.noteid;
+    },
+    function onClose(modal) {
+      modal.dataset.noteid = "";
+    }
+  );
 }
