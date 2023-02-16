@@ -68,7 +68,7 @@ import constructModal from "./modal.js";
 const modalContainer = document.querySelector(".modalContainer");
 constructModal(
     modalContainer,
-    function onOpen(modal, container) {},
-    function onClose(modal, container) {}
+    function onOpen(modalPlace, container) {},
+    function onClose(modalPlace, container) {}
 );
 ```
