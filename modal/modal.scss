@@ -1,23 +1,42 @@
 .modalWrapper {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #80808099;
     position: fixed;
     left:0;
     top:0;
+    animation: fade-in 600ms forwards;
 }
 
 .modalPlace {
     height: 400px;
     width: 600px;
-    background-color: gold;
+    background-color: #fdfcfb;
     position: absolute;
-    left: 50%;
+    // Don't use `transform: translateX(-50%)` here, because it's supposed to be animated, and the animation needs to play with transform on translateY, which will override and break this.
+    left: calc(50% - 300px);
     top: 100px;
-    transform: translateX(-50%);
+}
+
+.modalWrapper .modalPlace {
+    animation: fade-in 600ms forwards, slide-up 600ms forwards;
 }
 
 .modalWrapper.hidden {
+    display: none;
+}
+
+.modalWrapper.modalClosing {
+    animation: fade-out 400ms forwards;
+    // Not _quite_ necessary... but will allow the user to interact with the page _as soon as_ the closing starts.
+    pointer-events: none;
+}
+
+.modalWrapper.modalClosing .modalPlace {
+    animation: slide-down 600ms forwards;
+}
+
+.modalContainer .modalBody {
     display: none;
 }
 
@@ -36,6 +55,22 @@
     background-color: #f5f5ff;
 }
 
-.modalContainer .modalBody {
-    display: none;
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade-out {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes slide-up {
+    0% {transform: translateY(30%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes slide-down {
+    0% {transform: translateY(0%);}
+    100% {transform: translateY(30%);}
 }

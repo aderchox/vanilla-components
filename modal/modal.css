@@ -1,23 +1,40 @@
 .modalWrapper {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(128, 128, 128, 0.6);
   position: fixed;
   left: 0;
   top: 0;
+  animation: fade-in 600ms forwards;
 }
 
 .modalPlace {
   height: 400px;
   width: 600px;
-  background-color: gold;
+  background-color: #fdfcfb;
   position: absolute;
-  left: 50%;
+  left: calc(50% - 300px);
   top: 100px;
-  transform: translateX(-50%);
+}
+
+.modalWrapper .modalPlace {
+  animation: fade-in 600ms forwards, slide-up 600ms forwards;
 }
 
 .modalWrapper.hidden {
+  display: none;
+}
+
+.modalWrapper.modalClosing {
+  animation: fade-out 400ms forwards;
+  pointer-events: none;
+}
+
+.modalWrapper.modalClosing .modalPlace {
+  animation: slide-down 600ms forwards;
+}
+
+.modalContainer .modalBody {
   display: none;
 }
 
@@ -36,8 +53,37 @@
   background-color: #f5f5ff;
 }
 
-.modalContainer .modalBody {
-  display: none;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(30%);
+  }
 }
 
 /*# sourceMappingURL=modal.css.map */
